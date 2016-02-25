@@ -11,6 +11,10 @@ Package author: Andrei Salnikov
 Please describe any modifications that you made to the package in the
 reverse time order.
 
+Tag: V00-05-38
+2016-02-25 Mikhail S. Dubrovin	
+- in Andor3dBaseV1.h set Rows=Cols=0 for case fo variable size array.
+
 Tag: V00-05-37
 2016-02-08 Mikhail S. Dubrovin	
 - add Andor3dBaseV1.h (PSAS-139)

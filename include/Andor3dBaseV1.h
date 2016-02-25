@@ -46,10 +46,10 @@ public:
 
   const static size_t   Ndim = 3; 
   const static size_t   Segs = 2; 
-  const static size_t   Rows = 2048; 
-  const static size_t   Cols = 2048; 
-  //const static size_t   Rows = 0; // FOR VARIABLE SHAPE DATA PARAMETERS WILL BE TAKEN FROM FILE METADATA
-  //const static size_t   Cols = 0; // FOR VARIABLE SHAPE DATA PARAMETERS WILL BE TAKEN FROM FILE METADATA
+  //const static size_t   Rows = 2048; 
+  //const static size_t   Cols = 2048; 
+  const static size_t   Rows = 0; // FOR VARIABLE SHAPE DATA PARAMETERS WILL BE TAKEN FROM FILE METADATA
+  const static size_t   Cols = 0; // FOR VARIABLE SHAPE DATA PARAMETERS WILL BE TAKEN FROM FILE METADATA
   const static size_t   Size = Segs*Rows*Cols; 
   const static size_t   SizeCM = 16; 
 
