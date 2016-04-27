@@ -59,10 +59,36 @@ CsPad2x2PedestalsV1::CsPad2x2PedestalsV1 (const std::string& fname)
   // read all numbers
   pedestal_t* it = m_pedestals;
   size_t count = 0;
+
+  //===========================
+  /*
   while(in and count != Size) {
     in >> *it++;
     ++ count;
   }
+  */
+  //===========================
+
+  pedestal_t  val;
+  std::string str; 
+  while(getline(in,str)) { 
+        // 1. skip lines with comments (# in the 1st position)
+        if(str[0] == '#') continue;
+
+        // 2. skip empty lines 
+        else if (str.find_first_not_of(" ")==std::string::npos) continue; 
+
+        // 3. parse one line
+        else {
+               std::stringstream ss(str);
+               while (ss >> val and count != Size) { 
+                 *it++ = val;
+                 ++ count;
+	       }
+	}
+  }
+
+  //===========================
 
   // check that we read whole array
   if (count != Size) {

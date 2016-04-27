@@ -11,6 +11,11 @@ Package author: Andrei Salnikov
 Please describe any modifications that you made to the package in the
 reverse time order.
 
+Tag: V00-05-39
+2016-04-27 Mikhail S. Dubrovin	
+- CsPadPedestalsV1,    CsPadPixelGainV1,    CsPadPixelStatusV1,
+  CsPad2x2PedestalsV1, CsPad2x2PixelGainV1, CsPad2x2PixelStatusV1 - load constants with commented lines
+	
 Tag: V00-05-38
 2016-02-25 Mikhail S. Dubrovin	
 - in Andor3dBaseV1.h set Rows=Cols=0 for case fo variable size array.
