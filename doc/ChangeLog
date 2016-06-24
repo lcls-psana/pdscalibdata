@@ -11,6 +11,10 @@ Package author: Andrei Salnikov
 Please describe any modifications that you made to the package in the
 reverse time order.
 
+Tag: V00-05-40
+2016-06-24 Mikhail S. Dubrovin	
+- Epix100aBaseV1 - set Epix100 default common mode parameters to 4,6,30,10
+	
 Tag: V00-05-39
 2016-04-27 Mikhail S. Dubrovin	
 - CsPadPedestalsV1,    CsPadPixelGainV1,    CsPadPixelStatusV1,

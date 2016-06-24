@@ -60,7 +60,7 @@ protected:
 
   Epix100aBaseV1 (){ 
     shape_t shape[Ndim]={Rows,Cols};            
-    cmod_t cmod[SizeCM]={4,1,20,0, 0,0,0,0, 0,0,0,0, 0,0,0,0}; 
+    cmod_t cmod[SizeCM]={4,6,30,10, 0,0,0,0, 0,0,0,0, 0,0,0,0}; 
     // 4-Epix100a, 1-median for 16 352x96 banks, 20-maximal allowed correction
     std::memcpy(m_shape, &shape[0], sizeof(shape_t)*Ndim);
     std::memcpy(m_cmod,  &cmod[0],  sizeof(cmod_t)*SizeCM);
