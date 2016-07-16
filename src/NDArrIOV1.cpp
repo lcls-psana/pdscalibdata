@@ -304,7 +304,7 @@ void NDArrIOV1<TDATA, NDIM>::load_data(std::ifstream& in, const std::string& str
       std::stringstream ss;
       ss << "NDArray file:\n  " << m_fname << "\n  does not have enough data: "
          << "read " << m_count_data << " numbers, expecting " << m_size;
-      MsgLog(__name__(), warning, ss.str());
+      // MsgLog(__name__(), warning, ss.str());
       if( ndim()>1 ) throw std::runtime_error(ss.str());
     }
 
