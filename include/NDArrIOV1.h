@@ -54,7 +54,7 @@ namespace pdscalibdata {
  *  This software was developed for the LCLS project.  If you use all or 
  *  part of it, please give an appropriate acknowledgment.
  *
- *  @see AdditionalClass
+ *  @see
  *
  *  @version $Id$
  *
@@ -86,21 +86,33 @@ namespace pdscalibdata {
  *  @endcode
  *
  *  @li Instatiation
- *  \n Constractor 1:
- *  \n Use short name for type and instatiate the object:
+ *  \n Constractor 0:
+ *  \n Uses file name as input parameter w/o default initialization:
  *  @code
  *  std::string fname("path/pedestals/0-end.data"); // mandatory parameter
- *  unsigned shape[]   = {2,3,4};                   // mandatory parameter
+ *  unsigned print_bits(0377);                      // optional parameter 
+ *
+ *  ARRIO* arrio = new ARRIO(fname, print_bits);
+ *  @endcode
+ *  \n
+ *  \n
+ *  \n Constractor 1:
+ *  \n Uses file name, array shape, and single value for default initialization:
+ *  @code
+ *  std::string fname("path/pedestals/0-end.data"); // mandatory parameter
+ *  unsigned shape[] = {2,3,4};                     // mandatory parameter
  *  TYPE   val_def = 123;                           // optional parameter
  *  unsigned print_bits(0377);                      // optional parameter 
  *
  *  ARRIO* arrio = new ARRIO(fname, shape, data_def, print_bits);
  *  @endcode
- *  where shape is used for 
+ *  shape is used for 
  *  \n 1) cross-check of metadata shape from file,
  *  \n 2) creation of ndarray<TYPE,NDIM> with default parameters if file is missing.
  *  \n
+ *  \n
  *  \n Constractor 2:
+ *  \n Uses file name and default ndarray:
  *  @code
  *  CalibPars::common_mode_t data_def[] = {1, 50, 10, Size};
  *  ndarray<CalibPars::common_mode_t,1> nda = make_ndarray(&data_def[0], 4);

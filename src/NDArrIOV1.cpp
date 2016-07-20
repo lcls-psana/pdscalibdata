@@ -43,7 +43,6 @@ NDArrIOV1<TDATA, NDIM>::NDArrIOV1 ( const std::string& fname
 {
   init();
   m_size = 0; // actual size is loaded from metadata
-  //m_shape = 0;
 }
 
 //-----------------------------
@@ -136,7 +135,8 @@ void NDArrIOV1<TDATA, NDIM>::load_ndarray()
   
     // read and process all strings
     std::string str; 
-    while(getline(in,str)) { 
+    while(getline(in,str)) {
+        // cout << str << '\n';
 
         // 1. parse lines with comments marked by # in the 1st position
         if(str[0] == '#') parse_str_of_comment(str.substr(1));
@@ -216,8 +216,8 @@ void NDArrIOV1<TDATA, NDIM>::parse_str_of_comment(const std::string& str)
 	std::stringstream smsg; 
         smsg << "NDIM in file metadata: " << m_ndim 
              << " is different from declaration: " << ndim();
-        // MsgLog(__name__(), error, smsg.str());
-        throw std::runtime_error(smsg.str());
+        MsgLog(__name__(), warning, smsg.str());
+        //throw std::runtime_error(smsg.str());
       }
     }
 
@@ -240,10 +240,7 @@ void NDArrIOV1<TDATA, NDIM>::parse_str_of_comment(const std::string& str)
                 << " in file " << m_fname
 	        << "\nCheck that calibration file has expected shape and data...";
            MsgLog(__name__(), warning, smsg.str());
-           throw std::runtime_error(smsg.str());
-	   // override or not ?
-	   //m_shape[dim] = val;
-	   //MsgLog(__name__(), debug, "Dimension: " << dim << " set to stride: " << m_shape[dim] );
+           //throw std::runtime_error(smsg.str());
 	}
     }
 
@@ -348,7 +345,8 @@ template <typename TDATA, unsigned NDIM>
 void NDArrIOV1<TDATA, NDIM>::print()
 {
     std::stringstream ss; 
-    ss << "print():"
+    ss << "print()"
+       << "\n  Constructor          # " << m_ctor
        << "\n  Number of dimensions : " << ndim()
        << "\n  Data type and size   : " << strOfDataTypeAndSize<TDATA>()
        << "\n  Enumerated data type : " << enumDataType<TDATA>()
