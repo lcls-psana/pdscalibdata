@@ -49,7 +49,7 @@ public:
   const static size_t   Rows = 185; 
   const static size_t   Cols = 388; 
   const static size_t   Size = Rows*Cols*Segs; 
-  const static size_t   SizeCM = 4; 
+  const static size_t   SizeCM = 5; 
   
  
   const shape_t* shape_base() { return &m_shape[0]; }
@@ -62,7 +62,7 @@ protected:
 
   CsPad2x2BaseV2 (){ 
     shape_t shape[Ndim]={Rows,Cols,Segs};            
-    cmod_t cmod[SizeCM]={1, 25, 25, 100}; // use algorithm 1
+    cmod_t cmod[SizeCM]={1, 25, 25, 100, 1}; // use algorithm 1
     std::memcpy(m_shape, &shape[0], sizeof(shape_t)*Ndim);
     std::memcpy(m_cmod,  &cmod[0],  sizeof(cmod_t)*SizeCM);
   };
