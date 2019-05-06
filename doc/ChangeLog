@@ -10,6 +10,11 @@ Package author: Andrei Salnikov
 
 Please describe any modifications that you made to the package in the
 reverse time order.
+
+Tag: V00-05-44
+2019-05-06 Mikhail S. Dubrovin
+- add Epix10ka2MBaseV1.h
+
 Tag: V00-05-43 Christopher O'Grady
 2016-12-09 Add new default common-mode parameter for cspad/cspad2x2 that
 allows enabling/disabling of unbonded-correction in the case where the
