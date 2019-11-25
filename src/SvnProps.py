@@ -16,6 +16,7 @@ If you use all or part of it, please give an appropriate acknowledgment.
 
 @author Mikhai S. Dubrovin
 """
+from __future__ import print_function
 
 #------------------------------
 # Properties substituted by SVN 
@@ -28,7 +29,7 @@ import sys
 
 #------------------------------
 
-class SvnProps :
+class SvnProps(object) :
     def __init__(self) : 
         self.updated  = "2014-05-05"
         self.revision = "$Revision$"
@@ -47,14 +48,14 @@ svnprops = SvnProps()  # use it as a singleton
 
 if __name__ == "__main__" :
     
-    print 'svnprops.updated  : %s' % svnprops.updated
-    print 'svnprops.revision : %s' % svnprops.revision
-    print 'svnprops.author   : %s' % svnprops.author
-    print 'svnprops.id       : %s' % svnprops.id
-    print 'svnprops.headurl  : %s' % svnprops.headurl
-    print 'svnprops.header   : %s' % svnprops.header
-    print 'svnprops.datelc   : %s' % svnprops.datelc
-    print 'svnprops.date     : %s' % svnprops.date
+    print('svnprops.updated  : %s' % svnprops.updated)
+    print('svnprops.revision : %s' % svnprops.revision)
+    print('svnprops.author   : %s' % svnprops.author)
+    print('svnprops.id       : %s' % svnprops.id)
+    print('svnprops.headurl  : %s' % svnprops.headurl)
+    print('svnprops.header   : %s' % svnprops.header)
+    print('svnprops.datelc   : %s' % svnprops.datelc)
+    print('svnprops.date     : %s' % svnprops.date)
 
     sys.exit ( 'End of test' )
 
